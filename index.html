@@ -1142,8 +1142,10 @@
             reader.readAsBinaryString(file);
         }
 
+        const GOOGLE_SHEETS_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT0qiPh9kaAWicbgQB2pN7OhBn2UH3V56g7vNmHRxUrRusfgruFILyrSFu_al1kj9hbk4b5hPUBGwY0/pub?output=csv';
+
         function loadDefaultData() {
-            fetch('coffee_sales_group1_realistic_1500rows.csv')
+            fetch(GOOGLE_SHEETS_URL)
                 .then(response => response.text())
                 .then(csv => {
                     const lines = csv.split('\n').filter(line => line.trim());
